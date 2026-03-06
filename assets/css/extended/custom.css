@@ -1,13 +1,14 @@
-/* Custom CSS for Professional Blog Design
+/* Custom CSS for AI With Lxya - Modern AI Blog Design
    Following best practices: Strategic whitespace, limited fonts, clean color palette */
 
 :root {
-    /* Color Palette - 2-3 complementary colors */
-    --primary-color: #2563eb;      /* Professional blue */
-    --secondary-color: #1e40af;    /* Darker blue for accents */
-    --text-color: #1f2937;         /* Dark gray for body text */
-    --light-bg: #f9fafb;           /* Light background */
+    /* AI-Style Color Palette */
+    --primary-color: #0F172A;      /* Deep navy - primary text/headers */
+    --accent-color: #6366F1;       /* Vibrant indigo - links & accents */
+    --background: #F8FAFC;         /* Light blue-gray background */
+    --text-color: #1E293B;         /* Slate gray for body text */
     --white: #ffffff;
+    --card-shadow: rgba(99, 102, 241, 0.1);
     
     /* Typography - Maximum 2-3 fonts */
     --heading-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -44,7 +45,7 @@ h1 {
 
 h2 {
     font-size: 2rem;
-    border-bottom: 2px solid var(--light-bg);
+    border-bottom: 2px solid var(--background);
     padding-bottom: var(--spacing-sm);
 }
 
@@ -105,11 +106,11 @@ img {
 
 /* Table of Contents Styling */
 .toc {
-    background: var(--light-bg);
+    background: var(--background);
     padding: var(--spacing-md);
     border-radius: 8px;
     margin-bottom: var(--spacing-lg);
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--accent-color);
 }
 
 .toc details summary {
@@ -123,7 +124,7 @@ img {
 .header {
     padding: var(--spacing-md) 0;
     background: var(--white);
-    border-bottom: 1px solid var(--light-bg);
+    border-bottom: 1px solid var(--background);
 }
 
 .nav {
@@ -138,7 +139,7 @@ img {
 }
 
 .nav a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Social Share Buttons */
@@ -147,13 +148,13 @@ img {
     gap: var(--spacing-sm);
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-md) 0;
-    border-top: 1px solid var(--light-bg);
-    border-bottom: 1px solid var(--light-bg);
+    border-top: 1px solid var(--background);
+    border-bottom: 1px solid var(--background);
 }
 
 .share-buttons a {
     padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: var(--white);
     border-radius: 4px;
     text-decoration: none;
@@ -162,7 +163,7 @@ img {
 }
 
 .share-buttons a:hover {
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 /* Email Subscription Form */
@@ -170,7 +171,7 @@ img {
     max-width: 600px;
     margin: var(--spacing-xl) auto;
     padding: var(--spacing-lg);
-    background: var(--light-bg);
+    background: var(--background);
     border-radius: 8px;
     text-align: center;
 }
@@ -184,7 +185,7 @@ img {
     width: 100%;
     max-width: 400px;
     padding: var(--spacing-sm) var(--spacing-md);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--accent-color);
     border-radius: 4px;
     font-size: 1rem;
     margin: var(--spacing-sm) 0;
@@ -192,7 +193,7 @@ img {
 
 .email-subscribe button {
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: var(--white);
     border: none;
     border-radius: 4px;
@@ -204,14 +205,14 @@ img {
 }
 
 .email-subscribe button:hover {
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 /* Related Posts Section */
 .related-posts {
     margin-top: var(--spacing-xl);
     padding: var(--spacing-lg);
-    background: var(--light-bg);
+    background: var(--background);
     border-radius: 8px;
 }
 
@@ -241,7 +242,7 @@ img {
 }
 
 .related-posts a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Responsive Design */
@@ -266,7 +267,7 @@ img {
 /* Code blocks */
 code {
     font-family: var(--mono-font);
-    background: var(--light-bg);
+    background: var(--background);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 0.9em;
@@ -280,11 +281,11 @@ pre {
 
 /* Accessibility and Performance */
 a {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 a:focus {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
 
@@ -302,7 +303,7 @@ li {
 blockquote {
     margin: var(--spacing-md) 0;
     padding: var(--spacing-md) var(--spacing-lg);
-    border-left: 4px solid var(--primary-color);
-    background: var(--light-bg);
+    border-left: 4px solid var(--accent-color);
+    background: var(--background);
     font-style: italic;
 }

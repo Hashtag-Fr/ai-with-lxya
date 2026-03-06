@@ -1,6 +1,6 @@
 baseURL = "https://hashtag-fr.github.io/lxya.github.io/"
 languageCode = "en-us"
-title = "Lxya Blog"
+title = "AI With Lxya"
 theme = "PaperMod"
 enableRobotsTXT = true
 enableEmoji = true
@@ -20,8 +20,8 @@ pagerSize = 10
 
 [params]
 author = "Lxya"
-description = "AI tools, coding and technology blog - Your go-to resource for artificial intelligence, productivity tools, and cutting-edge technology insights"
-keywords = ["AI", "artificial intelligence", "technology", "productivity", "coding", "blog"]
+description = "Discover the Future of Artificial Intelligence - A weekly blog exploring the latest AI tools, automation workflows, and future technologies. Learn how to use AI to build projects, earn money, and boost productivity."
+keywords = ["AI", "artificial intelligence", "technology", "productivity", "coding", "blog", "automation", "AI tools", "make money", "workflows"]
 
 # SEO Settings
 relativeURLs = true
@@ -42,10 +42,10 @@ defaultTheme = "light"
 ShowFullTextinRSS = true
 
 # Homepage Info Section
-homeInfoParams.Title = "Welcome to Lxya Blog"
+homeInfoParams.Title = "Discover Powerful AI Tools"
 homeInfoParams.Content = """
-Your trusted source for AI tools, technology insights, and productivity tips. 
-Discover practical guides, in-depth reviews, and expert advice to stay ahead in the digital age.
+A weekly blog exploring the latest AI tools, automation workflows, and future technologies. 
+Learn how to use AI to build projects, earn money, and boost productivity.
 """
 
 # Profile Mode (Alternative: can be enabled for more visual homepage)
@@ -91,9 +91,14 @@ url = "/posts/"
 weight = 2
 
 [[menu.main]]
+name = "AI Tools"
+url = "/tags/ai-tools/"
+weight = 3
+
+[[menu.main]]
 name = "About Me"
 url = "/about/"
-weight = 3
+weight = 4
 
 [[menu.main]]
 name = "Search"

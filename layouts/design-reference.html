@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI With Lxya - Design Reference</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #F8FAFC;
+            color: #1E293B;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #0F172A;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            font-size: 16px;
+        }
+
+        nav a {
+            color: #1E293B;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #6366F1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #E2E8F0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .blog {
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #E2E8F0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        .card h3 {
+            color: #0F172A;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #64748B;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #6366F1;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0F172A;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #94A3B8;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 30px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .blog {
+                padding: 40px 20px;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>AI With Lxya</h2>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/posts/">Blog</a>
+            <a href="/tags/ai-tools/">AI Tools</a>
+            <a href="/about/">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Discover Powerful AI Tools</h1>
+        <p>A weekly blog exploring the latest AI tools, automation workflows, and future technologies. Learn how to use AI to build projects, earn money, and boost productivity.</p>
+    </section>
+
+    <section class="blog">
+        <div class="card">
+            <span class="card-tag">AI Tools</span>
+            <h3>7 AI Tools That Will Change Daily Life</h3>
+            <p>Explore the best AI tools of 2026 that are transforming how we work, create, and learn.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-tag">Automation</span>
+            <h3>How to Automate Workflows with n8n</h3>
+            <p>Build powerful automation systems without expensive subscriptions using n8n.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-tag">Developers</span>
+            <h3>Best Free AI Tools for Developers</h3>
+            <p>Top AI tools every coder should try to boost productivity and code quality.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-tag">Make Money</span>
+            <h3>How AI Can Help You Make Money Online</h3>
+            <p>Proven strategies to earn income using AI tools - from freelancing to SaaS.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-tag">Weekly</span>
+            <h3>Top AI Tools This Week - March 2026</h3>
+            <p>Stay ahead with weekly roundups of the hottest new AI tools and updates.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-tag">Productivity</span>
+            <h3>AI Productivity Hacks You Need to Know</h3>
+            <p>Practical tips to use AI for maximum efficiency in your daily work.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AI With Lxya. Discover the Future of Artificial Intelligence.</p>
+    </footer>
+</body>
+</html>
