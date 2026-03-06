@@ -1,53 +1,45 @@
-# Quick Start Guide for Lxya Blog
+# Lxya Blog
 
-## 🏁 Get Started in 5 Minutes
+A modern, SEO-optimized blog built with Hugo and the PaperMod theme.
 
-### Step 1: Preview Your Site
+Visit: [https://hashtag-fr.github.io/lxya.github.io/](https://hashtag-fr.github.io/lxya.github.io/)
+
+## Features
+
+- ✅ Modern, responsive design with PaperMod theme
+- ✅ Automatic deployment via GitHub Actions
+- ✅ SEO optimized with meta tags and sitemaps
+- ✅ Fast page load times
+- ✅ Search functionality
+- ✅ Social sharing buttons
+- ✅ Table of Contents for posts
+- ✅ Dark/Light mode toggle
+
+## Local Development
+
+Preview your changes locally:
+
 ```bash
-hugo server
+hugo server -D
 ```
-Visit http://localhost:1313 to see your blog in action!
 
-### Step 2: Create a New Blog Post
+Visit http://localhost:1313
+
+## Deployment
+
+This site automatically deploys to GitHub Pages using GitHub Actions whenever you push to the `main` branch.
+
+No need to build manually or commit the `public/` folder!
+
+## Writing Content
+
+Create a new blog post:
+
 ```bash
 hugo new posts/my-new-post.md
 ```
 
-Edit the file in `content/posts/my-new-post.md` and set `draft = false` when ready to publish.
-
-### Step 3: Add Your Content
-1. Update [content/about.md](content/about.md) with your information
-2. Add your logo to `static/images/logo.png`
-3. Add your profile photo to `static/images/profile.jpg`
-
-### Step 4: Build for Production
-```bash
-hugo
-```
-
-Your website is now in the `public/` folder, ready to deploy!
-
-## 📁 Project Structure
-
-```
-myblog/
-├── content/           # Your blog posts and pages
-│   ├── about.md      # About Me page
-│   ├── search.md     # Search page
-│   └── posts/        # Blog posts go here
-├── layouts/          # Custom templates
-│   ├── posts/        # Blog post templates
-│   └── partials/     # Reusable components
-├── assets/           # CSS and JavaScript
-│   └── css/
-│       └── extended/ # Your custom styles
-├── static/           # Images, fonts, files
-│   └── images/       # Store all images here
-├── hugo.toml         # Main configuration file
-└── SETUP-GUIDE.md    # Detailed instructions
-```
-
-## ✏️ Writing Your First Post
+Edit the file in `content/posts/` and set `draft = false` when ready to publish.
 
 1. Create a new post:
    ```bash
