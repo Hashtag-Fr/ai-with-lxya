@@ -11,3 +11,4 @@ resources/
 /posts/
 /page/
 /tags/
+.env
