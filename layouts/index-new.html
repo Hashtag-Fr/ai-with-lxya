@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI With Lxya - Discover Powerful AI Tools</title>
+    
+    <meta name="description" content="Explore the latest AI tools, automation workflows, developer resources, and strategies to build and earn using artificial intelligence.">
+    <meta name="keywords" content="AI tools, automation, artificial intelligence, n8n, developers, technology">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="/">AI With <span class="logo-accent">Lxya</span></a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/blog" class="nav-link">Blog</a></li>
+                <li><a href="/ai-tools" class="nav-link">AI Tools</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Powerful AI Tools</h1>
+                <p class="hero-subtitle">Explore the latest AI tools, automation workflows, developer resources, and strategies to build and earn using artificial intelligence.</p>
+                <a href="#featured-posts" class="cta-button">Explore Articles</a>
+            </div>
+            <div class="hero-decoration">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container newsletter-container">
+            <h2 class="newsletter-title">Join the AI Newsletter</h2>
+            <p class="newsletter-description">Get weekly updates on AI tools, automation workflows, and new technologies.</p>
+            
+            <form class="newsletter-form" id="newsletterForm">
+                <input 
+                    type="email" 
+                    class="newsletter-input" 
+                    placeholder="Enter your email address" 
+                    required 
+                    aria-label="Email address"
+                >
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+            <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Featured Blog Posts -->
+    <section class="featured-posts" id="featured-posts">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Articles</h2>
+                <p class="section-subtitle">Discover the most popular content</p>
+            </div>
+            
+            <div class="blog-grid">
+                
+                <!-- Blog Card 1 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="/images/ai-tools-2026.jpg" alt="7 AI Tools That Will Change Daily Life" loading="lazy">
+                        <span class="blog-card-badge">AI Tools</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">7 AI Tools That Will Change Daily Life in 2026</h3>
+                        <p class="blog-card-excerpt">Discover the revolutionary AI tools transforming how we work, create, and communicate in 2026.</p>
+                        <a href="/blog/7-ai-tools-that-will-change-daily-life-in-2026/" class="blog-card-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="/images/n8n-automation.jpg" alt="How to Automate Workflows with n8n" loading="lazy">
+                        <span class="blog-card-badge">Automation</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">How to Automate Workflows with n8n</h3>
+                        <p class="blog-card-excerpt">Learn to build powerful automation workflows using n8n, the open-source automation platform.</p>
+                        <a href="/blog/how-to-automate-workflows-with-n8n/" class="blog-card-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="/images/dev-tools.jpg" alt="Best AI Tools for Developers" loading="lazy">
+                        <span class="blog-card-badge">Coding</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Best Free AI Tools for Developers in 2026</h3>
+                        <p class="blog-card-excerpt">Essential AI-powered tools every developer should know about to boost productivity and code quality.</p>
+                        <a href="/blog/best-free-ai-tools-for-developers-in-2026/" class="blog-card-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="/images/make-money-ai.jpg" alt="How to Make Money Using AI" loading="lazy">
+                        <span class="blog-card-badge">AI Business</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">How AI Can Help You Make Money Online in 2026</h3>
+                        <p class="blog-card-excerpt">Practical strategies to monetize AI skills and build profitable online businesses using artificial intelligence.</p>
+                        <a href="/blog/how-ai-can-help-you-make-money-online-in-2026/" class="blog-card-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- All Posts Section -->
+    <section class="all-posts">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Explore topics that interest you</p>
+            </div>
+            
+            <div class="categories-filter">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="ai-tools">AI Tools</button>
+                <button class="category-btn" data-category="automation">Automation</button>
+                <button class="category-btn" data-category="coding">Coding</button>
+                <button class="category-btn" data-category="ai-business">AI Business</button>
+            </div>
+            
+            <div class="posts-list">
+                
+                <article class="post-item" data-category="ai-tools">
+                    <div class="post-item-content">
+                        <span class="post-item-category">AI Tools</span>
+                        <h3 class="post-item-title">
+                            <a href="/blog/top-ai-tools-this-week-march-2026-edition/">Top AI Tools This Week - March 2026 Edition</a>
+                        </h3>
+                        <p class="post-item-excerpt">A curated weekly roundup of the most exciting AI tools and releases.</p>
+                        <div class="post-item-meta">
+                            <span class="post-item-date">March 7, 2026</span>
+                            <span class="post-item-reading-time">5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-item" data-category="automation">
+                    <div class="post-item-content">
+                        <span class="post-item-category">Automation</span>
+                        <h3 class="post-item-title">
+                            <a href="/blog/how-to-automate-workflows-with-n8n/">How to Automate Workflows with n8n</a>
+                        </h3>
+                        <p class="post-item-excerpt">Step-by-step guide to building your first automation workflow.</p>
+                        <div class="post-item-meta">
+                            <span class="post-item-date">March 5, 2026</span>
+                            <span class="post-item-reading-time">8 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-item" data-category="coding">
+                    <div class="post-item-content">
+                        <span class="post-item-category">Coding</span>
+                        <h3 class="post-item-title">
+                            <a href="/blog/best-free-ai-tools-for-developers-in-2026/">Best Free AI Tools for Developers in 2026</a>
+                        </h3>
+                        <p class="post-item-excerpt">Free AI coding assistants, debugging tools, and productivity boosters.</p>
+                        <div class="post-item-meta">
+                            <span class="post-item-date">March 3, 2026</span>
+                            <span class="post-item-reading-time">6 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-item" data-category="ai-business">
+                    <div class="post-item-content">
+                        <span class="post-item-category">AI Business</span>
+                        <h3 class="post-item-title">
+                            <a href="/blog/how-ai-can-help-you-make-money-online-in-2026/">How AI Can Help You Make Money Online in 2026</a>
+                        </h3>
+                        <p class="post-item-excerpt">Real-world strategies to monetize AI skills and build income streams.</p>
+                        <div class="post-item-meta">
+                            <span class="post-item-date">March 1, 2026</span>
+                            <span class="post-item-reading-time">10 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2 class="about-title">About AI With Lxya</h2>
+                <p class="about-text">AI With Lxya is a technology blog focused on artificial intelligence tools, automation workflows, and practical ways developers and creators can use AI to build projects and generate income. We explore cutting-edge AI technologies, share hands-on tutorials, and provide actionable insights for anyone looking to leverage artificial intelligence in their work.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Articles Published</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Monthly Readers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">AI Tools Reviewed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="contact-title">Get in Touch</h2>
+                <p class="contact-description">Have a question, suggestion, or collaboration idea? We'd love to hear from you.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>contact@aiwithlxya.com</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Response within 24 hours</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+                </div>
+                
+                <button type="submit" class="contact-submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">AI With <span>Lxya</span></h3>
+                    <p class="footer-tagline">Empowering creators with AI knowledge</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/ai-tools">AI Tools</a></li>
+                            <li><a href="/about">About</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="/categories/ai-tools">AI Tools</a></li>
+                            <li><a href="/categories/automation">Automation</a></li>
+                            <li><a href="/categories/coding">Coding</a></li>
+                            <li><a href="/categories/ai-business">AI Business</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter" class="social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="GitHub" class="social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI With Lxya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
