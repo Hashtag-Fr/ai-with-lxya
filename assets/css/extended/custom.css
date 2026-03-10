@@ -367,18 +367,19 @@ h3 {
     line-height: 1.7;  /* Match paragraph line-height */
 }
 
-/* Better contrast for dark mode - IMPROVED */
+/* Initial dark mode variables - These get overridden by main dark mode section */
 .dark {
-    --text-color: #E5E7EB;  /* Brighter than #E2E8F0 */
-    --heading-color: #F9FAFB;  /* Nearly white for strong contrast */
-    --border: #374155;
-    --background: #111827;  /* Darker for better contrast */
+    --text-color: #F1F5F9;
+    --heading-color: #FFFFFF;
+    --border: #334155;
+    --background: #0F172A;
 }
 
 /* Ensure good contrast in dark mode */
 .dark .blog-card-excerpt p,
 .dark .entry-content p {
-    opacity: 0.92;  /* Slightly higher opacity for better readability */
+    opacity: 0.97;  /* Higher opacity for better readability */
+    color: #E2E8F0;  /* Explicit bright color */
 }
 
 /* ============================================
@@ -2061,46 +2062,155 @@ img {
 }
 
 /* ============================================
-   DARK MODE ENHANCEMENTS
+   DARK MODE ENHANCEMENTS - PREMIUM STYLE
    ============================================ */
 
 .dark {
-    --text-color: #E2E8F0;
-    --heading-color: #F1F5F9;
+    --text-color: #F1F5F9;  /* Much brighter for readability */
+    --heading-color: #FFFFFF;  /* Pure white for maximum contrast */
     --border: #334155;
-    --background: #0F172A;
-    --white: #1E293B;
-    --card-shadow: rgba(0, 0, 0, 0.3);
+    --background: #0F172A;  /* Rich dark blue */
+    --white: #1E293B;  /* Card background */
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --gradient-start: #6366F1;
+    --gradient-end: #8B5CF6;
 }
 
+/* Dark body with gradient feel */
+.dark body {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    background-attachment: fixed;
+}
+
+/* Header with subtle gradient */
+.dark .header {
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode hero with vibrant gradient */
 .dark .homepage-hero {
-    background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #8B5CF6 100%);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
 }
 
+/* Cards with gradient borders and depth */
 .dark .blog-grid-card,
 .dark .category-card,
 .dark .resource-card,
 .dark .about-section,
-.dark .search-result-item {
-    background: var(--white);
-    border-color: var(--border);
+.dark .search-result-item,
+.dark .post-entry {
+    background: linear-gradient(135deg, #1E293B 0%, #1a2332 100%);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
+/* Hover effects with gradient glow */
 .dark .blog-grid-card:hover,
 .dark .category-card:hover,
-.dark .resource-card:hover {
-    border-color: var(--primary-color);
+.dark .resource-card:hover,
+.dark .post-entry:hover {
+    border-color: var(--gradient-start);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(99, 102, 241, 0.3);
+    transform: translateY(-4px);
 }
 
+/* Newsletter section with gradient */
 .dark .newsletter-section {
-    background: #1E293B;
+    background: linear-gradient(135deg, #1E293B 0%, #1a2332 100%);
+    border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
+/* Form inputs with better contrast */
 .dark #searchInput,
 .dark .newsletter-form input[type="email"] {
-    background: #1E293B;
-    border-color: var(--border);
-    color: var(--text-color);
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    color: #F1F5F9;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark #searchInput:focus,
+.dark .newsletter-form input[type="email"]:focus {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: var(--gradient-start);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2), inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography enhancements for dark mode */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark p,
+.dark li,
+.dark span {
+    color: #F1F5F9;
+}
+
+/* Links with gradient hover */
+.dark a:not(.blog-card-link):not(.resource-card a) {
+    color: #A78BFA;
+}
+
+.dark a:not(.blog-card-link):not(.resource-card a):hover {
+    color: #C4B5FD;
+}
+
+/* Code blocks in dark mode */
+.dark code,
+.dark pre {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #E2E8F0;
+}
+
+/* Button enhancements */
+.dark button,
+.dark .cta-button,
+.dark .resource-card a {
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.dark button:hover,
+.dark .cta-button:hover,
+.dark .resource-card a:hover {
+    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+}
+
+/* Footer in dark mode */
+.dark .footer {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Menu in dark mode */
+.dark #menu a {
+    color: #F1F5F9;
+}
+
+.dark #menu a:hover,
+.dark #menu a.active {
+    color: #A78BFA;
+    border-bottom-color: #A78BFA;
+}
+
+/* Logo in dark mode */
+.dark .logo {
+    color: #FFFFFF !important;
+}
+
+.dark .logo:hover {
+    color: #A78BFA !important;
 }
 
 /* ============================================

@@ -211,8 +211,8 @@ Master keyboard shortcuts for your AI tools—speed is everything
 
 ### 3. Prompt Engineering for Code
 Be specific:
-- ❌ "make a function"
-- ✅ "create a TypeScript function that validates email addresses using regex"
+- **Bad:** "make a function"
+- **Good:** "create a TypeScript function that validates email addresses using regex"
 
 ### 4. Review AI Suggestions
 AI isn't perfect—always review generated code for:

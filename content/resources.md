@@ -13,7 +13,7 @@ url: "/resources/"
 
 <div class="resources-section">
 
-## 🚀 Productivity & Writing
+## Productivity & Writing
 
 <div class="resources-grid">
 <div class="resource-card">
@@ -53,7 +53,7 @@ Advanced AI assistant for complex reasoning tasks. Excellent for analysis, codin
 
 <div class="resources-section">
 
-## 💻 Coding & Development
+## Coding & Development
 
 <div class="resources-grid">
 <div class="resource-card">
@@ -93,7 +93,7 @@ Amazon's AI code generator with built-in security scanning. Free for individual 
 
 <div class="resources-section">
 
-## 🎨 Content Creation
+## Content Creation
 
 <div class="resources-grid">
 <div class="resource-card">
@@ -133,7 +133,7 @@ AI video creation with digital avatars. Generate professional videos without cam
 
 <div class="resources-section">
 
-## ⚡ Automation Platforms
+## Automation Platforms
 
 <div class="resources-grid">
 <div class="resource-card">
@@ -173,7 +173,7 @@ Simple automation for web services and smart home devices. Create applets in min
 
 <div class="resources-section">
 
-## 📊 Business Intelligence & Analytics
+## Business Intelligence & Analytics
 
 <div class="resources-grid">
 <div class="resource-card">
@@ -212,7 +212,7 @@ Automated machine learning platform. Build and deploy AI models without deep ML 
 </div>
 
 <div class="resources-callout">
-  <h2>🎯 Getting Started with AI Tools</h2>
+  <h2>Getting Started with AI Tools</h2>
   
   <div class="getting-started-grid">
     <div class="start-card">

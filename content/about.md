@@ -19,15 +19,15 @@ searchHidden: true
 
 <div class="about-section">
 
-## 🎯 The Mission
+## The Mission
 
 Artificial intelligence is evolving faster than ever, with new tools launching every week. My mission is simple: **cut through the noise and show you what actually works**.
 
 Whether you're looking to:
-- 🚀 **Build projects** with AI
-- 💰 **Earn money** using AI tools
-- ⚡ **Boost productivity** through automation
-- 🎯 **Stay ahead** of technology trends
+- **Build projects** with AI
+- **Earn money** using AI tools
+- **Boost productivity** through automation
+- **Stay ahead** of technology trends
 
 ...you'll find practical, tested insights here.
 
@@ -35,7 +35,7 @@ Whether you're looking to:
 
 <div class="about-section">
 
-## 📚 What You'll Find
+## What You'll Find
 
 <div class="about-features">
 
@@ -57,7 +57,7 @@ Proven ways to turn AI skills into income through freelancing, SaaS, and digital
 
 <div class="about-section">
 
-## 🔍 Why Trust This Blog?
+## Why Trust This Blog?
 
 I'm not sponsored by AI companies (though I use affiliate links when recommending tools I genuinely use). Every recommendation comes from hands-on testing and real-world application.
 
@@ -71,7 +71,7 @@ I'm not sponsored by AI companies (though I use affiliate links when recommendin
 
 <div class="about-section">
 
-## 💡 The AI With Lxya Philosophy
+## The AI With Lxya Philosophy
 
 ### AI is a Tool, Not Magic
 I don't hype AI beyond what it can actually do. You'll get honest assessments of strengths and limitations.
@@ -129,7 +129,7 @@ Get weekly AI tool updates delivered to your inbox. No spam, just the best AI di
 
 **About the Name**: "AI With Lxya" represents the journey we're on together—exploring artificial intelligence and discovering how to use it effectively in our daily lives.
 
-Thanks for being here. Let's discover the future of AI together! 🚀
+Thanks for being here. Let's discover the future of AI together!
 
 ---
 
