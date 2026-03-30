@@ -1,13 +1,3 @@
-<script>
-  // Force light mode across sessions and devices.
-  document.documentElement.dataset.theme = "light";
-  try {
-    localStorage.removeItem("pref-theme");
-  } catch (e) {
-    // Ignore storage access errors.
-  }
-</script>
-
 <!-- Enhanced SEO Meta Tags -->
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords ", " }}{{ else }}{{ delimit .Site.Params.keywords ", " }}{{ end }}">

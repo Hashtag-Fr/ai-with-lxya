@@ -6,7 +6,7 @@
 :root {
     /* AI-Style Color Palette */
     --primary-color: #6366F1;      /* Vibrant indigo for accents */
-    --primary-dark: #4F46E5;       /* Darker indigo for hover */
+    --primary-strong: #4F46E5;      /* Stronger indigo for hover */
     --text-color: #1E293B;         /* Slate gray for body text */
     --heading-color: #0F172A;      /* Deep navy for headings */
     --background: #F8FAFC;         /* Light blue-gray background */
@@ -444,7 +444,7 @@ h3 {
 }
 
 .resource-card a:hover {
-    background: var(--primary-dark);
+    background: var(--primary-strong);
     transform: translateX(3px);
 }
 
@@ -597,7 +597,7 @@ h3 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 1rem;
     /* Gradient text effect */
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-strong));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1084,7 +1084,7 @@ h3 {
 }
 
 .newsletter-form button:hover {
-    background: var(--primary-dark);
+    background: var(--primary-strong);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
@@ -1213,7 +1213,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-dark);
+    background: var(--primary-strong);
 }
 
 /* ============================================
@@ -2264,7 +2264,7 @@ textarea:focus-visible {
 }
 
 .cta-button.primary:hover {
-    background: var(--primary-dark);
+    background: var(--primary-strong);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
