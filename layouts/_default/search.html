@@ -1,0 +1,226 @@
+{{- define "main" }}
+
+<div class="search-page-wrapper">
+  <div class="search-hero">
+    <h1 class="search-page-title">Search</h1>
+    <p class="search-page-subtitle">Find articles, tutorials, and resources</p>
+  </div>
+
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input 
+        id="searchInput" 
+        type="text" 
+        placeholder="Search for AI tools, tutorials, automation..."
+        autocomplete="off"
+        aria-label="Search"
+      >
+      <button id="searchClear" class="search-clear" aria-label="Clear search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div id="searchStats" class="search-stats"></div>
+    
+    <div id="searchResults" class="search-results"></div>
+    
+    <div id="searchEmptyState" class="search-empty-state">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <p>Start typing to search articles...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Search functionality
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchStats = document.getElementById('searchStats');
+const searchClear = document.getElementById('searchClear');
+const emptyState = document.getElementById('searchEmptyState');
+
+let searchIndex = [];
+let fuse;
+
+// Load search index
+fetch('/index.json')
+  .then(response => response.json())
+  .then(data => {
+    searchIndex = data;
+    
+    // Initialize Fuse.js for fuzzy search
+    if (typeof Fuse !== 'undefined') {
+      fuse = new Fuse(searchIndex, {
+        keys: ['title', 'content', 'tags', 'categories'],
+        threshold: 0.4,
+        includeMatches: true,
+        minMatchCharLength: 2
+      });
+    }
+  })
+  .catch(error => console.error('Error loading search index:', error));
+
+// Search input handler
+searchInput.addEventListener('input', debounce(function(e) {
+  const query = e.target.value.trim();
+  
+  if (query.length === 0) {
+    searchResults.innerHTML = '';
+    searchStats.innerHTML = '';
+    emptyState.style.display = 'block';
+    searchClear.style.display = 'none';
+    return;
+  }
+  
+  searchClear.style.display = 'block';
+  emptyState.style.display = 'none';
+  performSearch(query);
+}, 300));
+
+// Clear button handler
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  searchResults.innerHTML = '';
+  searchStats.innerHTML = '';
+  emptyState.style.display = 'block';
+  searchClear.style.display = 'none';
+  searchInput.focus();
+});
+
+// Perform search
+function performSearch(query) {
+  let results = [];
+  
+  if (fuse) {
+    results = fuse.search(query);
+  } else {
+    // Fallback to simple search
+    const lowerQuery = query.toLowerCase();
+    results = searchIndex
+      .filter(item => {
+        return item.title.toLowerCase().includes(lowerQuery) ||
+               item.content.toLowerCase().includes(lowerQuery) ||
+               (item.tags && item.tags.some(tag => tag.toLowerCase().includes(lowerQuery)));
+      })
+      .map(item => ({ item }));
+  }
+  
+  displayResults(results, query);
+}
+
+// Display search results
+function displayResults(results, query) {
+  if (results.length === 0) {
+    searchStats.innerHTML = `<p class="no-results">No results found for "<strong>${escapeHtml(query)}</strong>"</p>`;
+    searchResults.innerHTML = '';
+    return;
+  }
+  
+  searchStats.innerHTML = `<p class="results-count">Found <strong>${results.length}</strong> result${results.length > 1 ? 's' : ''} for "<strong>${escapeHtml(query)}</strong>"</p>`;
+  
+  const resultsHTML = results.slice(0, 20).map(result => {
+    const item = result.item;
+    const excerpt = getExcerpt(item.content, query);
+    
+    return `
+      <article class="search-result-card">
+        <h3 class="search-result-title">
+          <a href="${item.permalink}">${highlightText(item.title, query)}</a>
+        </h3>
+        ${item.categories && item.categories.length > 0 ? `
+          <span class="search-result-category">${item.categories[0]}</span>
+        ` : ''}
+        <p class="search-result-excerpt">${highlightText(excerpt, query)}</p>
+        <div class="search-result-meta">
+          <time datetime="${item.date}">${formatDate(item.date)}</time>
+          ${item.tags && item.tags.length > 0 ? `
+            <span class="search-result-tags">
+              ${item.tags.slice(0, 3).map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </span>
+          ` : ''}
+        </div>
+      </article>
+    `;
+  }).join('');
+  
+  searchResults.innerHTML = resultsHTML;
+}
+
+// Helper functions
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function highlightText(text, query) {
+  if (!query) return escapeHtml(text);
+  
+  const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+}
+
+function getExcerpt(content, query, maxLength = 200) {
+  const lowerContent = content.toLowerCase();
+  const lowerQuery = query.toLowerCase();
+  const index = lowerContent.indexOf(lowerQuery);
+  
+  if (index !== -1) {
+    const start = Math.max(0, index - 80);
+    const end = Math.min(content.length, index + query.length + 120);
+    let excerpt = content.substring(start, end);
+    
+    if (start > 0) excerpt = '...' + excerpt;
+    if (end < content.length) excerpt = excerpt + '...';
+    
+    return excerpt;
+  }
+  
+  return content.substring(0, maxLength) + (content.length > maxLength ? '...' : '');
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+// Focus search input on page load
+window.addEventListener('DOMContentLoaded', () => {
+  searchInput.focus();
+});
+
+// Keyboard shortcut (Ctrl/Cmd + K)
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    searchInput.focus();
+  }
+});
+</script>
+
+<!-- Fuse.js for better search (optional CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+
+{{- end }}{{- /* end main */ -}}

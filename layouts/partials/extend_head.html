@@ -1,0 +1,114 @@
+<!-- Enhanced SEO Meta Tags -->
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords ", " }}{{ else }}{{ delimit .Site.Params.keywords ", " }}{{ end }}">
+<meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="en_US">
+
+{{- if .Params.cover.image }}
+<meta property="og:image" content="{{ .Params.cover.image | absURL }}">
+<meta property="og:image:alt" content="{{ .Params.cover.alt | default .Title }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{{- else if .Site.Params.meta.defaultImage }}
+<meta property="og:image" content="{{ .Site.Params.meta.defaultImage | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{{- end }}
+
+{{- if .IsPage }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}">
+
+{{- with .Params.categories }}
+{{- range . }}
+<meta property="article:section" content="{{ . }}">
+{{- end }}
+{{- end }}
+
+{{- with .Params.tags }}
+{{- range . }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- end }}
+{{- end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+{{- if .Params.cover.image }}
+<meta name="twitter:image" content="{{ .Params.cover.image | absURL }}">
+<meta name="twitter:image:alt" content="{{ .Params.cover.alt | default .Title }}">
+{{- else if .Site.Params.meta.defaultImage }}
+<meta name="twitter:image" content="{{ .Site.Params.meta.defaultImage | absURL }}">
+{{- end }}
+
+{{- with .Site.Params.meta.twitterSite }}
+<meta name="twitter:site" content="{{ . }}">
+{{- end }}
+
+{{- with .Site.Params.meta.twitterCreator }}
+<meta name="twitter:creator" content="{{ . }}">
+{{- end }}
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if .IsPage }}Article{{ else }}WebSite{{ end }}",
+  "headline": "{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}",
+  "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  {{- if .IsPage }}
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}"
+  },
+  {{- end }}
+  {{- if or .Params.cover.image .Site.Params.meta.defaultImage }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ if .Params.cover.image }}{{ .Params.cover.image | absURL }}{{ else }}{{ .Site.Params.meta.defaultImage | absURL }}{{ end }}",
+    "width": 1200,
+    "height": 630
+  },
+  {{- end }}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}favicon.ico"
+    }
+  },
+  {{- if .IsPage }}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  {{- end }}
+  "inLanguage": "en-US"
+}
+</script>
+
+<!-- Additional SEO Enhancements -->
+<meta name="theme-color" content="#6366F1">
+<meta name="msapplication-TileColor" content="#6366F1">
+
+<!-- Preconnect to external resources for better performance -->
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="dns-prefetch" href="https://images.unsplash.com">

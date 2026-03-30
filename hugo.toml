@@ -1,0 +1,153 @@
+baseURL = "https://hashtag-fr.github.io/lxya.github.io/"
+languageCode = "en-us"
+title = "AI With Lxya"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableEmoji = true
+
+# SEO-friendly URL structure
+[permalinks]
+  posts = "/blog/:slug/"
+
+[pagination]
+pagerSize = 10
+
+# Minify HTML for better performance
+[minify]
+  disableHTML = false
+  disableJSON = false
+  disableJS = false
+
+[params]
+author = "Lxya"
+description = "Discover the Future of Artificial Intelligence - A weekly blog exploring the latest AI tools, automation workflows, and future technologies. Learn how to use AI to build projects, earn money, and boost productivity."
+keywords = ["AI", "artificial intelligence", "technology", "productivity", "coding", "blog", "automation", "AI tools", "make money", "workflows"]
+
+# SEO Settings
+relativeURLs = true
+canonifyURLs = true
+
+# Enhanced Meta Tags
+[params.meta]
+defaultImage = "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80"
+twitterCard = "summary_large_image"
+twitterSite = "@aiwithlyxa"
+twitterCreator = "@aiwithlyxa"
+
+# Open Graph and Twitter Card support
+[params.og]
+locale = "en_US"
+type = "website"
+siteName = "AI With Lxya"
+title = "AI With Lxya - Discover Powerful AI Tools"
+description = "Explore the latest AI tools, automation workflows, and strategies to build and earn using artificial intelligence."
+
+# JSON-LD structured data
+[params.schema]
+enable = true
+type = "Blog"
+organization = "AI With Lxya"
+
+# Homepage Settings - Clear purpose and eye-catching
+ShowBreadCrumbs = true
+ShowPostNavLinks = true
+ShowCodeCopyButtons = true
+ShowReadingTime = true
+ShowShareButtons = true  # Social sharing buttons
+ShowToc = true  # Table of Contents
+TocOpen = false  # ToC collapsed by default
+
+# Design Best Practices - Clean and professional
+disableThemeToggle = false
+defaultTheme = "light"
+ShowFullTextinRSS = true
+
+# Homepage Info Section
+homeInfoParams.Title = "Discover Powerful AI Tools"
+homeInfoParams.Content = """
+A weekly blog exploring the latest AI tools, automation workflows, and future technologies. 
+Learn how to use AI to build projects, earn money, and boost productivity.
+"""
+
+# Profile Mode (Alternative: can be enabled for more visual homepage)
+profileMode.enabled = false
+
+# Social Media Links (for sharing and footer)
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/"
+
+[[params.socialIcons]]
+name = "rss"
+url = "/index.xml"
+
+# Image Optimization Settings
+[params.cover]
+linkFullImages = true
+responsiveImages = true
+
+# SEO and Analytics
+[params.analytics]
+google_analytics_id = "" # Add your GA4 ID here
+
+# Navigation Menu - Simple and reader-centric
+[menu]
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+url = "/posts/"
+weight = 2
+
+[[menu.main]]
+name = "Resources"
+url = "/resources/"
+weight = 3
+
+[[menu.main]]
+name = "About Me"
+url = "/about/"
+weight = 4
+
+[[menu.main]]
+name = "Search"
+url = "/search/"
+weight = 5
+
+# Taxonomies for better SEO
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+# Output formats for search functionality
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+# Markup settings for proper heading hierarchy
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    noClasses = false
+    style = "monokai"
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2

@@ -1,0 +1,94 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title">
+      {{ .Title }}
+      {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      {{- partial "translation_list.html" . -}}
+      {{- partial "edit_post.html" . -}}
+      {{- partial "post_canonical.html" . -}}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- $isHidden := .Params.cover.hidden | default site.Params.cover.hidden }}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }}
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  {{- /* Email Subscription Form */ -}}
+  <div class="email-subscribe">
+    <h3>📧 Never Miss a Post!</h3>
+    <p>Get the latest AI insights, tech reviews, and productivity tips delivered straight to your inbox.</p>
+    <form action="#" method="post" id="email-subscribe-form">
+      <input type="email" name="email" placeholder="Enter your email address" required aria-label="Email address">
+      <button type="submit">Subscribe Now</button>
+    </form>
+    <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">No spam, ever. Unsubscribe anytime.</p>
+  </div>
+
+  {{- /* Related Posts Section */ -}}
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ if $related }}
+  <div class="related-posts">
+    <h3>📚 You Might Also Like</h3>
+    <ul>
+      {{ range $related }}
+      <li>
+        <a href="{{ .Permalink }}">
+          <strong>{{ .Title }}</strong>
+          {{- if .Params.description }}
+          <br><span style="font-weight: normal; color: #6b7280;">{{ .Params.description }}</span>
+          {{- end }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  <footer class="post-footer">
+    {{- if .Params.tags }}
+    <ul class="post-tags">
+      {{- range ($.GetTerms "tags") }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+
+    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- partial "share_icons.html" . -}}
+    {{- end }}
+  </footer>
+
+  {{- if (.Param "comments") }}
+  {{- partial "comments.html" . }}
+  {{- end }}
+</article>
+
+{{- end }}{{/* end main */}}
