@@ -58,7 +58,7 @@ ShowToc = true  # Table of Contents
 TocOpen = false  # ToC collapsed by default
 
 # Design Best Practices - Clean and professional
-disableThemeToggle = false
+disableThemeToggle = true
 defaultTheme = "light"
 ShowFullTextinRSS = true
 
