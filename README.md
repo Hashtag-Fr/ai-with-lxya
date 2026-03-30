@@ -2,7 +2,7 @@
 
 A modern, SEO-optimized blog built with Hugo and the PaperMod theme.
 
-Visit: [https://hashtag-fr.github.io/lxya.github.io/](https://hashtag-fr.github.io/lxya.github.io/)
+Visit: [https://hashtag-fr.github.io/ai-with-lxya/](https://hashtag-fr.github.io/ai-with-lxya/)
 
 ## Features
 
